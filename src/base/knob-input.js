@@ -21,6 +21,8 @@ export default class KnobInput {
     this.dragResistance *= 3 / (max - min);
     this.wheelResistance = typeof options.wheelResistance === 'number' ? options.wheelResistance : 100;
     this.wheelResistance *= 40 / (max - min);
+    this.dispatchEventOnSetterUse = typeof options.dispatchEventOnSetterUse === 'boolean'
+      ? options.dispatchEventOnSetterUse : true;
 
     // setup elements
     this._input = crel('input', { class: styles.knobInputBase, type: 'range', step, min, max, value: this.initial });
@@ -258,7 +260,9 @@ export default class KnobInput {
   set value(val) {
     this._input.value = val;
     this.updateToInputValue();
-    this._input.dispatchEvent(new Event('change'));
+    if (this.dispatchEventOnSetterUse) {
+      this._input.dispatchEvent(new Event('change'));
+    }
   }
   // TODO: add getters/setters for other properties like min/max?
 }
