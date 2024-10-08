@@ -155,3 +155,4 @@ In addition to the `containerElement` parameter of the `KnobInput` constructor, 
 | `wheelResistance`    | `100` | The amount of resistance to value change on mouse wheel scroll. Higher value means more precision, and the mouse wheel will be less effective at changing the input's value. |
 | `dragActiveClass`    | `null` | This class will be added to the container element whenever the user has an active drag interaction to change the value of the input. |
 | `focusActiveClass`   | `null` | This class will be added to the container element whenever the input has browser focus, which happens after most mouse interactions as well as with keyboard navigation. |
+| `dispatchEventOnSetterUse`   | `true` | Whether change event will be fired when using value setter. Useful when value can be changed both by knob and other control. |
