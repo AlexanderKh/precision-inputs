@@ -20,7 +20,7 @@
     "sass",
     "scss"
   ],
-  "main": "dist/index.js",
+  "main": "dist/precision-inputs.js",
   "files": [
     "dist/**/*"
   ],

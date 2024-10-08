@@ -6,7 +6,7 @@ node_modules/
 .DS_Store
 
 # demo builds
-dist
+#dist
 
 # built files
 /css
